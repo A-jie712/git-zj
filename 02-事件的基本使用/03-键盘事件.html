@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        请输入内容：<input type="text" @keydown.enter="showinfo">
+    </div>
+    <script>
+        new Vue({
+            el:"#app",
+            methods:{
+                showinfo(e){
+                    console.log("keycode:",e.keyCode);
+                    if (e.keyCode == 13){
+                        console.log("用户点击了enter键")
+                    }
+                    console.log("值：",e.target.value);
+                    console.log("键盘事件被触发了");
+                }
+            }
+        })
+    </script>
+</body>
+</html>

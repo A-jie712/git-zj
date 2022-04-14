@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <!--v-show:控制元素显示隐藏-->
+        <!--<div v-show="true">邯郸学院</div>
+        <div v-show="false">工程大学</div>-->
+
+        <!--v-if:控制元素显示隐藏-->
+        <!--<div v-if="true">邯郸学院</div>
+        <div v-if="bool">工程大学</div>
+        <button @click="showDiv">显示元素</button>-->
+
+        <!--n=1,2,3正常显示，n>=4，显示邯郸学院幼儿园 v-else,v-else-if -->
+        <button @click="n++">n+1</button>
+        {{n}}
+        <div v-if="n===1">邯郸学院</div>
+        <div v-if="false">邯郸学院111</div>
+        <div v-else-if="n===2">工程大学</div>
+        <div v-else-if="n===3">邯郸大学</div>
+        <div v-else>邯郸学院幼儿园</div>
+    </div>
+    <script>
+        Vue.config.productionTip = false
+        new Vue({
+            el:"#app",
+            data:{
+                n:1
+            }
+        })
+    </script>
+</body>
+</html>

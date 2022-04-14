@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <button v-on:click="showinfo">点我弹出提示框</button>
+        <button @click="">点我弹出提示框（简写）</button>
+        <input type="text" @blur="showinfo">
+    </div>
+
+    <script>
+        new Vue({
+            el:"#app",
+            data:{
+                msg:'hello world!'
+            },
+            methods:{
+                showinfo(event){
+                    console.log(event.target.innerHTML);
+                }
+            }
+        })
+    </script>
+</body>
+</html>

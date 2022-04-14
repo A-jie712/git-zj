@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+        <div id="app">
+            <h2>计数器：{{counter}}</h2>
+            <button @click="counter++">点我加一</button>
+        </div>
+        <script>
+            Vue.config.productionTip = false
+            new Vue({
+                el:"#app",
+                data:{
+                    counter:1
+                },
+                watch:{
+                    // counter: {
+                    //     handler(newvalue,oldvalue){
+                    //         console.log(newvalue,oldvalue)
+                    //     }
+                    // }
+                    counter(newvalue,oldvalue){
+                        console.log(newvalue,oldvalue)
+                    }
+                }
+            })
+        </script>
+</body>
+</html>

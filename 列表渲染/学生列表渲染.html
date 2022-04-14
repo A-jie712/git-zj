@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+<body>
+        <div id="app">
+            <button @click="add">添加</button>&nbsp;&nbsp;&nbsp;<button @click="del">删除</button>
+            <table border="1" style=" width:200px; height: 150px; border-collapse: collapse">
+                <tr>
+                    <th>学号</th>
+                    <th>姓名</th>
+                    <th>年龄</th>
+                </tr>
+                <tr align="center" v-for="p in persons" >
+                    <td>{{p.id}}</td>
+                    <td>{{p.name}}</td>
+                    <td>{{p.age}}</td>
+                </tr>
+            </table>
+        </div>
+
+        <script>
+            Vue.config.productionTip = false
+            new Vue({
+                el:"#app",
+                data:{
+                    persons:[
+                        {id:"001",name:"张三",age:18},
+                        {id:"002",name:"李四",age:19},
+                        {id:"003",name:"王五",age:20}
+                    ]
+                },
+                methods:{
+                    add(){
+                        const student = {id:"004",name:"刘六",age:31}
+                        this.persons.splice(2,0,student)
+                    },
+                    del(){
+                        this.persons.pop()
+                    }
+                }
+            })
+        </script>
+</body>
+</html>

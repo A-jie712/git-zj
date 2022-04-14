@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script src="../js/vue.js"></script>
+</head>
+<body>
+  <div id="app">
+      千米:<input type="text" v-model.number="kilometers"><br>
+      米&nbsp;&nbsp;&nbsp;:<input type="text" v-model.number="meters">
+  </div>
+  <script>
+      Vue.config.productionTip = false
+      new Vue({
+          el:"#app",
+          data:{
+               // 监视属性
+               meters:"1000",
+               kilometers:"1"
+          },
+          //监视属性方式
+          watch:{
+              meters(newValue){
+                  if(newValue===""){
+                      this.kilometers = ""
+                  }else {
+                      this.kilometers = newValue/1000
+                  }
+              },
+              kilometers(newValue){
+                  if(newValue===""){
+                      this.meters = ""
+                  }else {
+                      this.meters = newValue*1000
+                  }
+              }
+          },
+          //计算属性
+          /*computed:{
+              meters:{
+                  get(){
+                      if (this.kilometers===""){
+                          return ""
+                      }else {
+                          return this.kilometers*1000
+                      }
+                  },
+                  set(value){
+                      this.kilometers =value/1000
+                  }
+              }
+          }*/
+
+      })
+  </script>
+</body>
+</html>

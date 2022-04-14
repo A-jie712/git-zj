@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <a v-bind:href="url">点我去看{{movie}}</a>
+        <a :href="m2.url">点我去看{{m2.movie}}</a>
+        <button @click="dian">点我</button>
+    </div>
+    <script>
+        Vue.config.productionTip = false;
+        const vm = new Vue({
+            el:"#app",
+            data:{
+                url:"https://www.baidu.com/",
+                movie:"长津湖",
+                m2:{
+                    url:"https://www.sina.com",
+                    movie:"水门桥",
+                }
+            },
+            methods:{
+                dian(){
+                    alert("11111")
+                },
+
+            }
+
+        })
+    </script>
+</body>
+</html>
